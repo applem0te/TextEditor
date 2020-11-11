@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.text.Font;
 
 public class MenuController {
 
@@ -40,31 +41,42 @@ public class MenuController {
         Alert about = new Alert(Alert.AlertType.INFORMATION);
 
         about.setTitle("About");
-        about.setHeaderText("Practica 2");
+        about.setHeaderText("M07 P2");
         about.showAndWait();
 
     }
 
     @FXML
     public void chooseFontSize(ActionEvent e) {
-        String choice = ((CheckMenuItem) e.getSource()).getId();
+        String choice = ((RadioMenuItem) e.getSource()).getId();
 
         switch (choice) {
             case "sizeSmall":
                 input.setStyle("-fx-font-size: 14px");
                 break;
-            case "sizeDefault":
+            case "sizeNormal":
                 input.setStyle("-fx-font-size: 22px");
                 break;
             case "sizeLarge":
                 input.setStyle("-fx-font-size: 30px");
                 break;
-            default:
-                input.setStyle("-fx-font-size: 22px");
         }
     }
 
-    public void chooseFontStyle(){
+    public void chooseFontStyle(ActionEvent e){
+        String choice = ((RadioMenuItem) e.getSource()).getId();
+        double defaultSize = Font.getDefault().getSize();
+
+        switch (choice) {
+            case "timesNewRoman":
+                input.setFont(new Font("Times New Roman", defaultSize));
+                break;
+            case "verdana":
+                input.setFont(new Font("Verdana", defaultSize));
+                break;
+            default:
+                input.setFont(Font.getDefault());
+        }
 
     }
 

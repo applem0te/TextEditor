@@ -24,16 +24,16 @@
                <items>
                   <Menu mnemonicParsing="false" text="Size">
                     <items>
-                        <RadioMenuItem fx:id="sizeSmall" mnemonicParsing="false" onAction="#chooseFontSize" text="Small" />
-                        <RadioMenuItem fx:id="sizeDefault" mnemonicParsing="false" onAction="#chooseFontSize" selected="true" text="Default" />
-                        <RadioMenuItem mnemonicParsing="false" onAction="#chooseFontSize" text="Large" />
+                        <RadioMenuItem fx:id="sizeSmall" mnemonicParsing="false" onAction="#chooseFontSize" selected="true" text="Small" />
+                        <RadioMenuItem fx:id="sizeNormal" mnemonicParsing="false" onAction="#chooseFontSize" text="Normal" />
+                        <RadioMenuItem fx:id="sizeLarge" mnemonicParsing="false" onAction="#chooseFontSize" text="Large" />
                     </items>
                   </Menu>
                   <Menu mnemonicParsing="false" text="Font">
                      <items>
-                        <RadioMenuItem mnemonicParsing="false" text="JetBrains Mono" />
-                        <RadioMenuItem mnemonicParsing="false" text="Times New Roman" />
-                        <RadioMenuItem mnemonicParsing="false" text="Helvetica" />
+                         <RadioMenuItem fx:id="defaultFont" mnemonicParsing="false" onAction="#chooseFontStyle" text="Default" />
+                        <RadioMenuItem fx:id="timesNewRoman" mnemonicParsing="false" onAction="#chooseFontStyle" text="Times New Roman" />
+                        <RadioMenuItem fx:id="verdana" mnemonicParsing="false" onAction="#chooseFontStyle" text="Verdana" />
                      </items>
                   </Menu>
                </items>
