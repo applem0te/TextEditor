@@ -46,6 +46,22 @@ public class MenuController {
 
     }
 
+    public void copy(){
+
+    }
+
+    public void paste(){
+
+    }
+
+    public void delete(){
+
+    }
+
+    public void undo(){
+
+    }
+
     @FXML
     public void chooseFontSize(ActionEvent e) {
         String choice = ((RadioMenuItem) e.getSource()).getId();
@@ -75,6 +91,7 @@ public class MenuController {
                 input.setFont(new Font("Verdana", defaultSize));
                 break;
             default:
+                //jet mono brains
                 input.setFont(Font.getDefault());
         }
 
