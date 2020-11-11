@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="optionClose" mnemonicParsing="false" onAction="#exit" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Undo" />
+                  <MenuItem mnemonicParsing="false" text="Copy" />
+                  <MenuItem mnemonicParsing="false" text="Paste" />
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Appearance">
+               <items>
+                  <Menu mnemonicParsing="false" text="Size">
+                    <items>
+                        <RadioMenuItem fx:id="sizeSmall" mnemonicParsing="false" onAction="#chooseFontSize" text="Small" />
+                        <RadioMenuItem fx:id="sizeDefault" mnemonicParsing="false" onAction="#chooseFontSize" selected="true" text="Default" />
+                        <RadioMenuItem mnemonicParsing="false" onAction="#chooseFontSize" text="Large" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Font">
+                     <items>
+                        <RadioMenuItem mnemonicParsing="false" text="JetBrains Mono" />
+                        <RadioMenuItem mnemonicParsing="false" text="Times New Roman" />
+                        <RadioMenuItem mnemonicParsing="false" text="Helvetica" />
+                     </items>
+                  </Menu>
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="about" mnemonicParsing="false" onAction="#about" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <TextArea fx:id="input" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Undo" />
+          <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Copy" />
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Paste" />
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Delete" />
+        </items>
+      </ToolBar>
+   </bottom>
+</BorderPane>
