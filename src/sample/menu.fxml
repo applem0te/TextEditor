@@ -9,6 +9,9 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
+                  <MenuItem fx:id="optionOpen" mnemonicParsing="false" onAction="#actionPerformed" text="Open" />
+                  <MenuItem fx:id="optionNew" mnemonicParsing="false" onAction="#actionPerformed" text="New" />
+                  <MenuItem fx:id="optionSave" mnemonicParsing="false" onAction="#actionPerformed" text="Save" />
               <MenuItem fx:id="optionClose" mnemonicParsing="false" onAction="#exit" text="Close" />
             </items>
           </Menu>
@@ -52,10 +55,10 @@
    <bottom>
       <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <items>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Undo" />
-          <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Copy" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Paste" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Delete" />
+            <Button fx:id="undo" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Undo" />
+            <Button fx:id="cut" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Cut" />
+            <Button fx:id="copy" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Copy" />
+            <Button fx:id="paste" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Paste" />
         </items>
       </ToolBar>
    </bottom>

@@ -5,11 +5,17 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Font;
+import javafx.stage.FileChooser;
+
+import javax.swing.*;
+import java.io.*;
 
 public class MenuController {
 
     @FXML
     private TextArea input;
+
+    JFrame f;
 
     public void exit(){
 
@@ -46,15 +52,108 @@ public class MenuController {
 
     }
 
+    // If a button is pressed
+    public void actionPerformed(ActionEvent e)
+    {
+        String choice = ((MenuItem) e.getSource()).getId();
+
+        if (choice.equals("cut")) {
+            cut();
+        }
+        else if (choice.equals("copy")) {
+            copy();
+        }
+        else if (choice.equals("paste")) {
+            paste();
+        }
+        else if (choice.equals("optionSave")) {
+            // Create an object of JFileChooser class
+            JFileChooser j = new JFileChooser("f:");
+
+            // Invoke the showsSaveDialog function to show the save dialog
+            int r = j.showSaveDialog(null);
+
+            if (r == JFileChooser.APPROVE_OPTION) {
+
+                // Set the label to the path of the selected directory
+                File fi = new File(j.getSelectedFile().getAbsolutePath());
+
+                try {
+                    // Create a file writer
+                    FileWriter wr = new FileWriter(fi, false);
+
+                    // Create buffered writer to write
+                    BufferedWriter w = new BufferedWriter(wr);
+
+                    // Write
+                    w.write(input.getText());
+
+                    w.flush();
+                    w.close();
+                }
+                catch (Exception evt) {
+                    JOptionPane.showMessageDialog(f, evt.getMessage());
+                }
+            }
+            // If the user cancelled the operation
+            else
+                JOptionPane.showMessageDialog(f, "Operation cancelled");
+        }
+        else if (choice.equals("optionOpen")) {
+            // Create an object of JFileChooser class
+            JFileChooser j = new JFileChooser("f:");
+
+            // Invoke the showsOpenDialog function to show the save dialog
+            int r = j.showOpenDialog(null);
+
+            // If the user selects a file
+            if (r == JFileChooser.APPROVE_OPTION) {
+                // Set the label to the path of the selected directory
+                File fi = new File(j.getSelectedFile().getAbsolutePath());
+
+                try {
+                    // String
+                    String s1 = "", sl = "";
+
+                    // File reader
+                    FileReader fr = new FileReader(fi);
+
+                    // Buffered reader
+                    BufferedReader br = new BufferedReader(fr);
+
+                    // Initilize sl
+                    sl = br.readLine();
+
+                    // Take the input from the file
+                    while ((s1 = br.readLine()) != null) {
+                        sl = sl + "\n" + s1;
+                    }
+
+                    // Set the text
+                    input.setText(sl);
+                }
+                catch (Exception evt) {
+                    JOptionPane.showMessageDialog(f, evt.getMessage());
+                }
+            }
+            // If the user cancelled the operation
+            else
+                JOptionPane.showMessageDialog(f, "Operation cancelled");
+        }
+        else if (choice.equals("optionNew")) {
+            input.setText("");
+        }
+    }
+
+    public void cut(){
+
+    }
+
     public void copy(){
 
     }
 
     public void paste(){
-
-    }
-
-    public void delete(){
 
     }
 
