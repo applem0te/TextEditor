@@ -4,6 +4,9 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.DataFormat;
 import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
 
@@ -146,19 +149,16 @@ public class MenuController {
     }
 
     public void cut(){
-
+        input.cut();
     }
 
     public void copy(){
+        input.copy();
 
     }
 
-    public void paste(){
-
-    }
-
-    public void undo(){
-
+    public void paste() {
+        input.paste();
     }
 
     @FXML
